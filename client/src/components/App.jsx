@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Physicians from './Physicians';
+import Appointments from './Appointments';
 
 class App extends React.Component{
   constructor(){
@@ -42,10 +44,11 @@ class App extends React.Component{
   }
 
   render(){
+    let {physicians, displayedPatients} = this.state;
     return(
       <div id="notable">
-        {/* <Doctors/>
-        <Appointments/> */}
+        <Physicians physicians={physicians}/>
+        <Appointments appointments={displayedPatients}/>
       </div>
     )
   }
