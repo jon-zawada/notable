@@ -16,7 +16,7 @@ All occurs from within the root directory:
 
 Create mysql tables
 ```sh
-mysql -u root -p < ./db/schema.sql
+npm run create-tables
 ```
 
 Build react app with script:
