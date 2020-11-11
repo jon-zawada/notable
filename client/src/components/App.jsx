@@ -13,6 +13,7 @@ class App extends React.Component{
     }
     this.getPhysicians = this.getPhysicians.bind(this);
     this.getAppointments = this.getAppointments.bind(this);
+    this.updateCurrentDoc = this.updateCurrentDoc.bind(this);
   }
   componentDidMount() {
     this.getPhysicians();
@@ -43,11 +44,17 @@ class App extends React.Component{
       });
   }
 
+  updateCurrentDoc(id) {
+    this.setState({currentPhysician: this.state.physicians[id - 1]}, () => {
+      this.getAppointments(id);
+    });
+  } 
+
   render(){
     let {physicians, displayedPatients} = this.state;
     return(
       <div id="notable">
-        <Physicians physicians={physicians}/>
+        <Physicians physicians={physicians} updateCurrentDoc={this.updateCurrentDoc}/>
         <Appointments appointments={displayedPatients}/>
       </div>
     )
