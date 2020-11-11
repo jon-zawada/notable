@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server",
     "server-dev": "nodemon server",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "compile": "webpack -d --mode production",
+    "create-tables": "mysql -u root -p < db/schema.sql"
   },
   "author": "",
   "license": "ISC",
