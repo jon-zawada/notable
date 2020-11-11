@@ -12,7 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-app.get('/test', Controller.add);
+app.get('/physicians', Controller.getPhysicians);
+
+app.get('/physicians/:id/patients', Controller.getPatients);
 
 app.listen(port, () => {
   console.log(`Example app listening at ${port}`)

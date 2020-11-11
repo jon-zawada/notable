@@ -1,15 +1,24 @@
 const Models = require('./Models');
 
-const add = (req, res) => {
-  Models.add((err, data) => {
+const getPhysicians = (req, res) => {
+  Models.getPhysicians((err, data) => {
     if(err) {
-      console.log('controller fail')
       res.status(404).send();
     } else {
-      console.log('controller sucess')
-      res.send(JSON.stringify(data));
+      res.send(data);
     }
   });
 };
 
-module.exports = {add};
+const getPatients = (req, res) => {
+  let {id} = req.params;
+  Models.getPatients(id, (err, data) => {
+    if(err) {
+      res.status(404).send();
+    } else {
+      res.send(data);
+    }
+  })
+}
+
+module.exports = {getPhysicians, getPatients};

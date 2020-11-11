@@ -1,7 +1,7 @@
 const db = require('../db/index');
 
-const add = (callback) => {
-  db.query('SELECT 1 + 2 AS solution', (err, data) => {
+const getPhysicians = (callback) => {
+  db.query('SELECT * FROM physicians', (err, data) => {
     if(err) {
       callback(err);
     } else {
@@ -10,4 +10,14 @@ const add = (callback) => {
   });
 }
 
-module.exports = {add}
+const getPatients = (id, callback) => {
+  db.query('SELECT * FROM patients WHERE doctorId = ?', [id], (err, data) => {
+    if(err) {
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  });
+}
+
+module.exports = {getPhysicians, getPatients}
