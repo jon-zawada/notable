@@ -1,34 +1,28 @@
 import React from 'react';
 
-const Appointments = ({appointments}) => (
-  <table>
-    <tbody>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Time</th>
-        <th>Kind</th>
-      </tr>
-      {/* <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr> */}
-      {appointments.map((app, index) => (
-        <tr>
-          <td>{index + 1}</td>
-          <td>{app.full_name}</td>
-          <td>{app.time_stamp}</td>
-          <td>{app.kind}</td>
+const Appointments = ({appointments, current}) => (
+  <div id="Appointments">
+    <h1>{`Dr. ${current.first_name} ${current.last_name}`}</h1>
+    <h3>{current.last_name}@notablehealth.com</h3>
+    <table>
+      <tbody>
+        <tr id="top-row">
+          <th>#</th>
+          <th>Name</th>
+          <th>Time</th>
+          <th>Kind</th>
         </tr>
-      ))}
-    </tbody>
-</table>
+        {appointments.map((app, index) => (
+          <tr>
+            <td>{index + 1}</td>
+            <td>{app.full_name}</td>
+            <td>{app.time_stamp}</td>
+            <td>{app.kind}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 );
 
 export default Appointments;

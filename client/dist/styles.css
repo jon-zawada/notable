@@ -1,9 +1,64 @@
 #notable{
   display: flex;
+  /* border: 5px solid red; */
+  /* justify-content: space-around; */
+  width: 55%;
+  margin: auto;
+}
+
+#Physicians {
+  text-align: center;
+  width: 30%;
+  margin-left: 10px;
+  background-color: #dddddd;
+}
+
+#Appointments {
+  width: 70%;
+  margin: 30px;
+}
+
+#list-doctors {
+  padding-inline-start: 0;
+}
+
+#logo{
+  color: blue;
+  padding-bottom: 10px;
 }
 
 .doctors {
   border: 1px solid black;
   padding: 1px;
   cursor: pointer;
+  list-style-type: none;
+}
+
+.currentDoc {
+  border: 1px solid black;
+  padding: 1px;
+  cursor: pointer;
+  background-color: lightblue;
+  list-style-type: none;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#top-row {
+  background-color: blue;
+  color: white;
 }

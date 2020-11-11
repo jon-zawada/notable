@@ -51,11 +51,11 @@ class App extends React.Component{
   } 
 
   render(){
-    let {physicians, displayedPatients} = this.state;
+    let {physicians, displayedPatients,currentPhysician} = this.state;
     return(
       <div id="notable">
-        <Physicians physicians={physicians} updateCurrentDoc={this.updateCurrentDoc}/>
-        <Appointments appointments={displayedPatients}/>
+        <Physicians physicians={physicians} updateCurrentDoc={this.updateCurrentDoc} current={currentPhysician}/>
+        <Appointments appointments={displayedPatients} current={currentPhysician}/>
       </div>
     )
   }
